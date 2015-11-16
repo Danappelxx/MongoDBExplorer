@@ -1,0 +1,12 @@
+[submodule "Carthage/Checkouts/libbson-xcode"]
+	path = Carthage/Checkouts/libbson-xcode
+	url = https://github.com/Danappelxx/libbson-xcode.git
+[submodule "Carthage/Checkouts/libmongoc-xcode"]
+	path = Carthage/Checkouts/libmongoc-xcode
+	url = https://github.com/Danappelxx/libmongoc-xcode.git
+[submodule "Carthage/Checkouts/SwiftMongoDB"]
+	path = Carthage/Checkouts/SwiftMongoDB
+	url = https://github.com/danappelxx/SwiftMongoDB.git
+[submodule "Carthage/Checkouts/RATreeView"]
+	path = Carthage/Checkouts/RATreeView
+	url = https://github.com/Augustyniak/RATreeView.git

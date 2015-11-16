@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9527.1" systemVersion="15C40a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9525.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MongoDBExplorer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,157 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gl-sK-gtX">
+                                <rect key="frame" x="279" y="285" width="42" height="30"/>
+                                <state key="normal" title="Login!"/>
+                                <connections>
+                                    <segue destination="9h7-DW-s0o" kind="show" identifier="listDatabases" id="epw-jm-HXv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5gl-sK-gtX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NcB-g8-JAK"/>
+                            <constraint firstItem="5gl-sK-gtX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UEA-z8-aBQ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-345" y="266"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="miE-23-iuk">
+            <objects>
+                <navigationController id="9h7-DW-s0o" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wi6-PK-wmo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="14w-2V-wb7" kind="relationship" relationship="rootViewController" id="ziY-wf-Nov"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qfy-L8-MWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="266"/>
+        </scene>
+        <!--Databases-->
+        <scene sceneID="QNd-wl-Bw6">
+            <objects>
+                <tableViewController id="14w-2V-wb7" customClass="DatabasesTableViewController" customModule="MongoDBExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PBL-Hk-aJh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="databaseCell" id="bz8-RI-kdh" customClass="DatabaseTableViewCell" customModule="MongoDBExplorer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bz8-RI-kdh" id="PIh-Cg-PCD">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8r4-as-CPG">
+                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="8r4-as-CPG" secondAttribute="leading" id="V23-7G-dNf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="8r4-as-CPG" secondAttribute="trailing" id="bVE-no-2y4"/>
+                                        <constraint firstItem="8r4-as-CPG" firstAttribute="centerY" secondItem="PIh-Cg-PCD" secondAttribute="centerY" id="sGN-0r-HXd"/>
+                                        <constraint firstItem="8r4-as-CPG" firstAttribute="centerX" secondItem="PIh-Cg-PCD" secondAttribute="centerX" id="sGp-uW-ngG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="databaseNameLabel" destination="8r4-as-CPG" id="kKJ-VI-fNk"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="14w-2V-wb7" id="neg-Gd-P8o"/>
+                            <outlet property="delegate" destination="14w-2V-wb7" id="VIW-JJ-IQQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Databases" id="Zgj-vq-Y6p"/>
+                    <connections>
+                        <segue destination="MMY-04-fwA" kind="show" identifier="listCollections" id="shy-I4-vQ8"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCR-uF-EBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="266"/>
+        </scene>
+        <!--Collections-->
+        <scene sceneID="awA-Tk-iAi">
+            <objects>
+                <tableViewController id="MMY-04-fwA" customClass="CollectionsTableViewController" customModule="MongoDBExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xxy-LF-MpZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="collectionCell" id="N3W-OY-CeB" customClass="CollectionsTableViewCell" customModule="MongoDBExplorer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N3W-OY-CeB" id="obj-n1-Sgi">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urh-41-qnA">
+                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Urh-41-qnA" secondAttribute="leading" id="Jyu-gP-5XZ"/>
+                                        <constraint firstItem="Urh-41-qnA" firstAttribute="centerY" secondItem="obj-n1-Sgi" secondAttribute="centerY" id="O55-ff-4Vb"/>
+                                        <constraint firstItem="Urh-41-qnA" firstAttribute="centerX" secondItem="obj-n1-Sgi" secondAttribute="centerX" id="eF0-a2-zGt"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Urh-41-qnA" secondAttribute="trailing" id="gs1-XZ-PTX"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="collectionNameLabel" destination="Urh-41-qnA" id="kKI-nA-r4R"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MMY-04-fwA" id="hHO-3t-QID"/>
+                            <outlet property="delegate" destination="MMY-04-fwA" id="tMn-aZ-xp6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Collections" id="wz1-sm-EDF"/>
+                    <connections>
+                        <segue destination="SES-QC-VXt" kind="show" identifier="listDocuments" id="fgA-uA-Wjc"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Gi-cg-GHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1728" y="266"/>
+        </scene>
+        <!--Document Tree View Controller-->
+        <scene sceneID="ikm-8B-xgm">
+            <objects>
+                <viewController id="SES-QC-VXt" customClass="DocumentTreeViewController" customModule="MongoDBExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rwc-Gu-cQY"/>
+                        <viewControllerLayoutGuide type="bottom" id="CBV-7H-XRD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RzN-cT-FBw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2l-e8-ybM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2410" y="266"/>
         </scene>
     </scenes>
 </document>

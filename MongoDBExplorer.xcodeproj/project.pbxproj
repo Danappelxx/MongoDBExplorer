@@ -8,20 +8,65 @@
 
 /* Begin PBXBuildFile section */
 		371E65CD1BF9301E009A1040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E65CC1BF9301E009A1040 /* AppDelegate.swift */; };
-		371E65CF1BF9301E009A1040 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E65CE1BF9301E009A1040 /* ViewController.swift */; };
 		371E65D21BF9301E009A1040 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371E65D01BF9301E009A1040 /* Main.storyboard */; };
 		371E65D41BF9301E009A1040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371E65D31BF9301E009A1040 /* Assets.xcassets */; };
 		371E65D71BF9301E009A1040 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371E65D51BF9301E009A1040 /* LaunchScreen.storyboard */; };
+		371E65E11BF932A6009A1040 /* bson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371E65DE1BF932A6009A1040 /* bson.framework */; };
+		371E65E21BF932A6009A1040 /* bson.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371E65DE1BF932A6009A1040 /* bson.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		371E65E31BF932A6009A1040 /* mongoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371E65DF1BF932A6009A1040 /* mongoc.framework */; };
+		371E65E41BF932A6009A1040 /* mongoc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371E65DF1BF932A6009A1040 /* mongoc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		371E65E51BF932A6009A1040 /* SwiftMongoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371E65E01BF932A6009A1040 /* SwiftMongoDB.framework */; };
+		371E65E61BF932A6009A1040 /* SwiftMongoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371E65E01BF932A6009A1040 /* SwiftMongoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		371E65F21BF94141009A1040 /* RATreeView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371E65F11BF94141009A1040 /* RATreeView.framework */; };
+		371E65F31BF94141009A1040 /* RATreeView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371E65F11BF94141009A1040 /* RATreeView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		371E66031BF94237009A1040 /* CollectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E65FC1BF94237009A1040 /* CollectionsTableViewController.swift */; };
+		371E66041BF94237009A1040 /* DatabasesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E65FD1BF94237009A1040 /* DatabasesTableViewController.swift */; };
+		371E66051BF94237009A1040 /* DocumentTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E65FE1BF94237009A1040 /* DocumentTreeViewController.swift */; };
+		371E66061BF94237009A1040 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E65FF1BF94237009A1040 /* ViewController.swift */; };
+		371E66071BF94237009A1040 /* CollectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66011BF94237009A1040 /* CollectionsTableViewCell.swift */; };
+		371E66081BF94237009A1040 /* DatabaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66021BF94237009A1040 /* DatabaseTableViewCell.swift */; };
+		371E660B1BF9462A009A1040 /* DocumentTreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66091BF9462A009A1040 /* DocumentTreeTableViewCell.swift */; };
+		371E660C1BF9462A009A1040 /* DocumentTreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371E660A1BF9462A009A1040 /* DocumentTreeTableViewCell.xib */; };
+		371E66111BF9524C009A1040 /* DocumentTreeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66101BF9524C009A1040 /* DocumentTreeData.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		371E65E71BF932A7009A1040 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				371E65E21BF932A6009A1040 /* bson.framework in Embed Frameworks */,
+				371E65E41BF932A6009A1040 /* mongoc.framework in Embed Frameworks */,
+				371E65F31BF94141009A1040 /* RATreeView.framework in Embed Frameworks */,
+				371E65E61BF932A6009A1040 /* SwiftMongoDB.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		371E65C91BF9301E009A1040 /* MongoDBExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MongoDBExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		371E65CC1BF9301E009A1040 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		371E65CE1BF9301E009A1040 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		371E65D11BF9301E009A1040 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		371E65D31BF9301E009A1040 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		371E65D61BF9301E009A1040 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		371E65D81BF9301E009A1040 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		371E65DE1BF932A6009A1040 /* bson.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = bson.framework; path = Carthage/Build/iOS/bson.framework; sourceTree = "<group>"; };
+		371E65DF1BF932A6009A1040 /* mongoc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mongoc.framework; path = Carthage/Build/iOS/mongoc.framework; sourceTree = "<group>"; };
+		371E65E01BF932A6009A1040 /* SwiftMongoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMongoDB.framework; path = Carthage/Build/iOS/SwiftMongoDB.framework; sourceTree = "<group>"; };
+		371E65F11BF94141009A1040 /* RATreeView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RATreeView.framework; path = Carthage/Build/iOS/RATreeView.framework; sourceTree = "<group>"; };
+		371E65FC1BF94237009A1040 /* CollectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsTableViewController.swift; sourceTree = "<group>"; };
+		371E65FD1BF94237009A1040 /* DatabasesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabasesTableViewController.swift; sourceTree = "<group>"; };
+		371E65FE1BF94237009A1040 /* DocumentTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTreeViewController.swift; sourceTree = "<group>"; };
+		371E65FF1BF94237009A1040 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		371E66011BF94237009A1040 /* CollectionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsTableViewCell.swift; sourceTree = "<group>"; };
+		371E66021BF94237009A1040 /* DatabaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseTableViewCell.swift; sourceTree = "<group>"; };
+		371E66091BF9462A009A1040 /* DocumentTreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTreeTableViewCell.swift; sourceTree = "<group>"; };
+		371E660A1BF9462A009A1040 /* DocumentTreeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentTreeTableViewCell.xib; sourceTree = "<group>"; };
+		371E66101BF9524C009A1040 /* DocumentTreeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTreeData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +74,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371E65E11BF932A6009A1040 /* bson.framework in Frameworks */,
+				371E65E31BF932A6009A1040 /* mongoc.framework in Frameworks */,
+				371E65F21BF94141009A1040 /* RATreeView.framework in Frameworks */,
+				371E65E51BF932A6009A1040 /* SwiftMongoDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				371E65CB1BF9301E009A1040 /* MongoDBExplorer */,
+				371E65F41BF94145009A1040 /* Frameworks */,
 				371E65CA1BF9301E009A1040 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,14 +104,65 @@
 		371E65CB1BF9301E009A1040 /* MongoDBExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				371E65CC1BF9301E009A1040 /* AppDelegate.swift */,
-				371E65CE1BF9301E009A1040 /* ViewController.swift */,
+				371E65FB1BF94237009A1040 /* Controllers */,
+				371E66001BF94237009A1040 /* Views */,
+				371E660F1BF9524C009A1040 /* Models */,
 				371E65D01BF9301E009A1040 /* Main.storyboard */,
+				371E65EE1BF93963009A1040 /* Supporting Files */,
+			);
+			path = MongoDBExplorer;
+			sourceTree = "<group>";
+		};
+		371E65EE1BF93963009A1040 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				371E65CC1BF9301E009A1040 /* AppDelegate.swift */,
 				371E65D31BF9301E009A1040 /* Assets.xcassets */,
 				371E65D51BF9301E009A1040 /* LaunchScreen.storyboard */,
 				371E65D81BF9301E009A1040 /* Info.plist */,
 			);
-			path = MongoDBExplorer;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		371E65F41BF94145009A1040 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				371E65F11BF94141009A1040 /* RATreeView.framework */,
+				371E65DE1BF932A6009A1040 /* bson.framework */,
+				371E65DF1BF932A6009A1040 /* mongoc.framework */,
+				371E65E01BF932A6009A1040 /* SwiftMongoDB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		371E65FB1BF94237009A1040 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				371E65FF1BF94237009A1040 /* ViewController.swift */,
+				371E65FD1BF94237009A1040 /* DatabasesTableViewController.swift */,
+				371E65FC1BF94237009A1040 /* CollectionsTableViewController.swift */,
+				371E65FE1BF94237009A1040 /* DocumentTreeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		371E66001BF94237009A1040 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				371E66011BF94237009A1040 /* CollectionsTableViewCell.swift */,
+				371E66021BF94237009A1040 /* DatabaseTableViewCell.swift */,
+				371E66091BF9462A009A1040 /* DocumentTreeTableViewCell.swift */,
+				371E660A1BF9462A009A1040 /* DocumentTreeTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		371E660F1BF9524C009A1040 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				371E66101BF9524C009A1040 /* DocumentTreeData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +175,7 @@
 				371E65C51BF9301E009A1040 /* Sources */,
 				371E65C61BF9301E009A1040 /* Frameworks */,
 				371E65C71BF9301E009A1040 /* Resources */,
+				371E65E71BF932A7009A1040 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371E660C1BF9462A009A1040 /* DocumentTreeTableViewCell.xib in Resources */,
 				371E65D71BF9301E009A1040 /* LaunchScreen.storyboard in Resources */,
 				371E65D41BF9301E009A1040 /* Assets.xcassets in Resources */,
 				371E65D21BF9301E009A1040 /* Main.storyboard in Resources */,
@@ -135,8 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				371E65CF1BF9301E009A1040 /* ViewController.swift in Sources */,
+				371E66061BF94237009A1040 /* ViewController.swift in Sources */,
 				371E65CD1BF9301E009A1040 /* AppDelegate.swift in Sources */,
+				371E66081BF94237009A1040 /* DatabaseTableViewCell.swift in Sources */,
+				371E66031BF94237009A1040 /* CollectionsTableViewController.swift in Sources */,
+				371E660B1BF9462A009A1040 /* DocumentTreeTableViewCell.swift in Sources */,
+				371E66051BF94237009A1040 /* DocumentTreeViewController.swift in Sources */,
+				371E66111BF9524C009A1040 /* DocumentTreeData.swift in Sources */,
+				371E66041BF94237009A1040 /* DatabasesTableViewController.swift in Sources */,
+				371E66071BF94237009A1040 /* CollectionsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +359,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MongoDBExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dvappel.MongoDBExplorer;
@@ -260,6 +374,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MongoDBExplorer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.dvappel.MongoDBExplorer;
