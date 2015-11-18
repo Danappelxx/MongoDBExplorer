@@ -22,7 +22,7 @@
 		371E66031BF94237009A1040 /* CollectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E65FC1BF94237009A1040 /* CollectionsTableViewController.swift */; };
 		371E66041BF94237009A1040 /* DatabasesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E65FD1BF94237009A1040 /* DatabasesTableViewController.swift */; };
 		371E66051BF94237009A1040 /* DocumentTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E65FE1BF94237009A1040 /* DocumentTreeViewController.swift */; };
-		371E66061BF94237009A1040 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E65FF1BF94237009A1040 /* ViewController.swift */; };
+		371E66061BF94237009A1040 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E65FF1BF94237009A1040 /* ConnectViewController.swift */; };
 		371E66071BF94237009A1040 /* CollectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66011BF94237009A1040 /* CollectionsTableViewCell.swift */; };
 		371E66081BF94237009A1040 /* DatabaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66021BF94237009A1040 /* DatabaseTableViewCell.swift */; };
 		371E660B1BF9462A009A1040 /* DocumentTreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66091BF9462A009A1040 /* DocumentTreeTableViewCell.swift */; };
@@ -65,7 +65,7 @@
 		371E65FC1BF94237009A1040 /* CollectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsTableViewController.swift; sourceTree = "<group>"; };
 		371E65FD1BF94237009A1040 /* DatabasesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabasesTableViewController.swift; sourceTree = "<group>"; };
 		371E65FE1BF94237009A1040 /* DocumentTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTreeViewController.swift; sourceTree = "<group>"; };
-		371E65FF1BF94237009A1040 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		371E65FF1BF94237009A1040 /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		371E66011BF94237009A1040 /* CollectionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsTableViewCell.swift; sourceTree = "<group>"; };
 		371E66021BF94237009A1040 /* DatabaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseTableViewCell.swift; sourceTree = "<group>"; };
 		371E66091BF9462A009A1040 /* DocumentTreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTreeTableViewCell.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		371E65FB1BF94237009A1040 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				371E65FF1BF94237009A1040 /* ViewController.swift */,
+				371E65FF1BF94237009A1040 /* ConnectViewController.swift */,
 				371E65FD1BF94237009A1040 /* DatabasesTableViewController.swift */,
 				371E65FC1BF94237009A1040 /* CollectionsTableViewController.swift */,
 				371E65FE1BF94237009A1040 /* DocumentTreeViewController.swift */,
@@ -255,7 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				371E66061BF94237009A1040 /* ViewController.swift in Sources */,
+				371E66061BF94237009A1040 /* ConnectViewController.swift in Sources */,
 				378D78901BFBB64E0028C57D /* DocumentViewModel.swift in Sources */,
 				371E65CD1BF9301E009A1040 /* AppDelegate.swift in Sources */,
 				371E66081BF94237009A1040 /* DatabaseTableViewCell.swift in Sources */,

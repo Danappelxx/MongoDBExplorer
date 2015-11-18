@@ -10,7 +10,7 @@ import UIKit
 import SwiftMongoDB
 import Bond
 
-class ViewController: UIViewController {
+class ConnectViewController: UIViewController {
 
     var client: MongoClient!
 
