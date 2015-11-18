@@ -52,7 +52,6 @@ class DocumentViewModel {
         let treeView = RATreeView(frame: frame, style: RATreeViewStylePlain)
 
         treeView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        treeView.registerNib(UINib(nibName: "DocumentTreeTableViewCell", bundle: nil), forCellReuseIdentifier: "documentTreeCell")
 
         return treeView
     }

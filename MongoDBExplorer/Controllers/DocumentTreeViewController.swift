@@ -18,9 +18,8 @@ class DocumentTreeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
         let treeView = viewModel.treeView(frame: self.view.bounds)
-        treeView.delegate = self
+        treeView.registerClass(DocumentTreeTableViewCell.self, forCellReuseIdentifier: "documentTreeCell")
         treeView.dataSource = self
 
         view.addSubview(treeView)
@@ -37,9 +36,6 @@ class DocumentTreeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-}
-
-extension DocumentTreeViewController: RATreeViewDelegate {
 }
 
 extension DocumentTreeViewController: RATreeViewDataSource {
@@ -63,7 +59,7 @@ extension DocumentTreeViewController: RATreeViewDataSource {
         let label = DocumentTreeData.descriptionForItem(item)
 
         documentTreeCell.colors = true
-        documentTreeCell.label = label
+        documentTreeCell.labelText = label
         documentTreeCell.level = treeView.levelForCellForItem(item)
 
         return documentTreeCell

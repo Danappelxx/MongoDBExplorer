@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class DocumentTreeTableViewCell: UITableViewCell {
 
@@ -16,7 +17,9 @@ class DocumentTreeTableViewCell: UITableViewCell {
         didSet {
 
             let offset = CGFloat(30 * level)
-            self.leadingMarginConstraint.constant = -offset
+            self.label.snp_updateConstraints { make in
+                make.leftMargin.equalTo(offset)
+            }
 
             if colors {
                 let red: CGFloat = 70
@@ -30,26 +33,30 @@ class DocumentTreeTableViewCell: UITableViewCell {
         }
     }
 
-    var label: String {
+    var labelText: String {
         get {
-            return labelLabel.text ?? ""
+            return label.text ?? ""
         }
         set {
-            labelLabel.text = newValue
+            label.text = newValue
         }
     }
 
-    @IBOutlet weak var labelLabel: UILabel!
-    @IBOutlet weak var leadingMarginConstraint: NSLayoutConstraint!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var label: UILabel!
+
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        self.label = UILabel(frame: self.bounds)
+        self.addSubview(label)
+
+        label.snp_makeConstraints { make in
+            make.leftMargin.equalTo(10)
+            make.centerY.equalTo(self)
+        }
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
 }

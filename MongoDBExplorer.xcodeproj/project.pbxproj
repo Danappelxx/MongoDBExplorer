@@ -26,11 +26,12 @@
 		371E66071BF94237009A1040 /* CollectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66011BF94237009A1040 /* CollectionsTableViewCell.swift */; };
 		371E66081BF94237009A1040 /* DatabaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66021BF94237009A1040 /* DatabaseTableViewCell.swift */; };
 		371E660B1BF9462A009A1040 /* DocumentTreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66091BF9462A009A1040 /* DocumentTreeTableViewCell.swift */; };
-		371E660C1BF9462A009A1040 /* DocumentTreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371E660A1BF9462A009A1040 /* DocumentTreeTableViewCell.xib */; };
 		371E66111BF9524C009A1040 /* DocumentTreeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66101BF9524C009A1040 /* DocumentTreeData.swift */; };
 		378D78901BFBB64E0028C57D /* DocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D788F1BFBB64E0028C57D /* DocumentViewModel.swift */; };
 		378D78921BFBBDC40028C57D /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378D78911BFBBDC30028C57D /* Bond.framework */; };
 		378D78931BFBBDC40028C57D /* Bond.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 378D78911BFBBDC30028C57D /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		37ED6BC41BFD29D000D2E36E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37ED6BC31BFD29D000D2E36E /* SnapKit.framework */; };
+		37ED6BC51BFD29D000D2E36E /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37ED6BC31BFD29D000D2E36E /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 				371E65E21BF932A6009A1040 /* bson.framework in Embed Frameworks */,
 				371E65E41BF932A6009A1040 /* mongoc.framework in Embed Frameworks */,
 				371E65F31BF94141009A1040 /* RATreeView.framework in Embed Frameworks */,
+				37ED6BC51BFD29D000D2E36E /* SnapKit.framework in Embed Frameworks */,
 				371E65E61BF932A6009A1040 /* SwiftMongoDB.framework in Embed Frameworks */,
 				378D78931BFBBDC40028C57D /* Bond.framework in Embed Frameworks */,
 			);
@@ -69,10 +71,10 @@
 		371E66011BF94237009A1040 /* CollectionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsTableViewCell.swift; sourceTree = "<group>"; };
 		371E66021BF94237009A1040 /* DatabaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseTableViewCell.swift; sourceTree = "<group>"; };
 		371E66091BF9462A009A1040 /* DocumentTreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTreeTableViewCell.swift; sourceTree = "<group>"; };
-		371E660A1BF9462A009A1040 /* DocumentTreeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentTreeTableViewCell.xib; sourceTree = "<group>"; };
 		371E66101BF9524C009A1040 /* DocumentTreeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTreeData.swift; sourceTree = "<group>"; };
 		378D788F1BFBB64E0028C57D /* DocumentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentViewModel.swift; sourceTree = "<group>"; };
 		378D78911BFBBDC30028C57D /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/iOS/Bond.framework; sourceTree = "<group>"; };
+		37ED6BC31BFD29D000D2E36E /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				371E65E11BF932A6009A1040 /* bson.framework in Frameworks */,
 				371E65E31BF932A6009A1040 /* mongoc.framework in Frameworks */,
 				371E65F21BF94141009A1040 /* RATreeView.framework in Frameworks */,
+				37ED6BC41BFD29D000D2E36E /* SnapKit.framework in Frameworks */,
 				371E65E51BF932A6009A1040 /* SwiftMongoDB.framework in Frameworks */,
 				378D78921BFBBDC40028C57D /* Bond.framework in Frameworks */,
 			);
@@ -135,6 +138,7 @@
 		371E65F41BF94145009A1040 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37ED6BC31BFD29D000D2E36E /* SnapKit.framework */,
 				378D78911BFBBDC30028C57D /* Bond.framework */,
 				371E65F11BF94141009A1040 /* RATreeView.framework */,
 				371E65DE1BF932A6009A1040 /* bson.framework */,
@@ -161,7 +165,6 @@
 				371E66011BF94237009A1040 /* CollectionsTableViewCell.swift */,
 				371E66021BF94237009A1040 /* DatabaseTableViewCell.swift */,
 				371E66091BF9462A009A1040 /* DocumentTreeTableViewCell.swift */,
-				371E660A1BF9462A009A1040 /* DocumentTreeTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,7 +244,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				371E660C1BF9462A009A1040 /* DocumentTreeTableViewCell.xib in Resources */,
 				371E65D71BF9301E009A1040 /* LaunchScreen.storyboard in Resources */,
 				371E65D41BF9301E009A1040 /* Assets.xcassets in Resources */,
 				371E65D21BF9301E009A1040 /* Main.storyboard in Resources */,
