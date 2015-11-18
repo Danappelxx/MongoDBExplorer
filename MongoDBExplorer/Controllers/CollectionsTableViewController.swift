@@ -71,8 +71,8 @@ class CollectionsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
 
         let destination = segue.destinationViewController as! DocumentTreeViewController
-        destination.collectionName = selectedCollection
-        destination.collection = MongoCollection(collectionName: destination.collectionName, client: client)
+        let collection = MongoCollection(collectionName: selectedCollection, client: client)
+        destination.viewModel = DocumentViewModel(collection: collection)
     }
 
 }

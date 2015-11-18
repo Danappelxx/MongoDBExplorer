@@ -1,3 +1,6 @@
-github "danappelxx/SwiftMongoDB"
+# Core
+github "Danappelxx/SwiftMongoDB"
+github "SwiftBond/Bond"
 
+# Views
 github "Augustyniak/RATreeView"

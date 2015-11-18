@@ -38,4 +38,14 @@ struct DocumentTreeData {
             self.children = data
         }
     }
+    
+    static func descriptionForItem(item: AnyObject!) -> String {
+        if let data = item as? DocumentData {
+            let keys = [String](data.keys)
+            
+            return keys.joinWithSeparator(", ")
+        }
+        
+        return item.description
+    }
 }

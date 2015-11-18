@@ -6,7 +6,10 @@
 	url = https://github.com/Danappelxx/libmongoc-xcode.git
 [submodule "Carthage/Checkouts/SwiftMongoDB"]
 	path = Carthage/Checkouts/SwiftMongoDB
-	url = https://github.com/danappelxx/SwiftMongoDB.git
+	url = https://github.com/Danappelxx/SwiftMongoDB.git
 [submodule "Carthage/Checkouts/RATreeView"]
 	path = Carthage/Checkouts/RATreeView
 	url = https://github.com/Augustyniak/RATreeView.git
+[submodule "Carthage/Checkouts/Bond"]
+	path = Carthage/Checkouts/Bond
+	url = https://github.com/SwiftBond/Bond.git

@@ -28,6 +28,9 @@
 		371E660B1BF9462A009A1040 /* DocumentTreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66091BF9462A009A1040 /* DocumentTreeTableViewCell.swift */; };
 		371E660C1BF9462A009A1040 /* DocumentTreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 371E660A1BF9462A009A1040 /* DocumentTreeTableViewCell.xib */; };
 		371E66111BF9524C009A1040 /* DocumentTreeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E66101BF9524C009A1040 /* DocumentTreeData.swift */; };
+		378D78901BFBB64E0028C57D /* DocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D788F1BFBB64E0028C57D /* DocumentViewModel.swift */; };
+		378D78921BFBBDC40028C57D /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378D78911BFBBDC30028C57D /* Bond.framework */; };
+		378D78931BFBBDC40028C57D /* Bond.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 378D78911BFBBDC30028C57D /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +44,7 @@
 				371E65E41BF932A6009A1040 /* mongoc.framework in Embed Frameworks */,
 				371E65F31BF94141009A1040 /* RATreeView.framework in Embed Frameworks */,
 				371E65E61BF932A6009A1040 /* SwiftMongoDB.framework in Embed Frameworks */,
+				378D78931BFBBDC40028C57D /* Bond.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +71,8 @@
 		371E66091BF9462A009A1040 /* DocumentTreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTreeTableViewCell.swift; sourceTree = "<group>"; };
 		371E660A1BF9462A009A1040 /* DocumentTreeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentTreeTableViewCell.xib; sourceTree = "<group>"; };
 		371E66101BF9524C009A1040 /* DocumentTreeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTreeData.swift; sourceTree = "<group>"; };
+		378D788F1BFBB64E0028C57D /* DocumentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentViewModel.swift; sourceTree = "<group>"; };
+		378D78911BFBBDC30028C57D /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/iOS/Bond.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 				371E65E31BF932A6009A1040 /* mongoc.framework in Frameworks */,
 				371E65F21BF94141009A1040 /* RATreeView.framework in Frameworks */,
 				371E65E51BF932A6009A1040 /* SwiftMongoDB.framework in Frameworks */,
+				378D78921BFBBDC40028C57D /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +111,7 @@
 		371E65CB1BF9301E009A1040 /* MongoDBExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				378D788E1BFBB6210028C57D /* ViewModels */,
 				371E65FB1BF94237009A1040 /* Controllers */,
 				371E66001BF94237009A1040 /* Views */,
 				371E660F1BF9524C009A1040 /* Models */,
@@ -127,6 +135,7 @@
 		371E65F41BF94145009A1040 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				378D78911BFBBDC30028C57D /* Bond.framework */,
 				371E65F11BF94141009A1040 /* RATreeView.framework */,
 				371E65DE1BF932A6009A1040 /* bson.framework */,
 				371E65DF1BF932A6009A1040 /* mongoc.framework */,
@@ -163,6 +172,14 @@
 				371E66101BF9524C009A1040 /* DocumentTreeData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		378D788E1BFBB6210028C57D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				378D788F1BFBB64E0028C57D /* DocumentViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				371E66061BF94237009A1040 /* ViewController.swift in Sources */,
+				378D78901BFBB64E0028C57D /* DocumentViewModel.swift in Sources */,
 				371E65CD1BF9301E009A1040 /* AppDelegate.swift in Sources */,
 				371E66081BF94237009A1040 /* DatabaseTableViewCell.swift in Sources */,
 				371E66031BF94237009A1040 /* CollectionsTableViewController.swift in Sources */,
@@ -404,6 +422,7 @@
 				371E65DD1BF9301E009A1040 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
