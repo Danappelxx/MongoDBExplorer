@@ -29,7 +29,8 @@ class DocumentTreeViewController: UIViewController {
         viewModel.treeData
             .observe { _ in
                 treeView.reloadData()
-        }
+            }
+            .disposeIn(bnd_bag)
     }
 
     override func didReceiveMemoryWarning() {

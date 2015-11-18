@@ -28,22 +28,24 @@ class DocumentViewModel {
     func setupObservers() {
 
         query
-            .observe { query in
+            .observe { [unowned self] query in
                 if let docs = try? self.collection.find(query) {
                     self.documents.next(docs)
                 } else {
                     self.documents.next([])
                 }
             }
+            .disposeIn(NSObject().bnd_bag)
 
         documents
             .map {
                 $0.map { $0.data }
             }
-            .observe { docs in
+            .observe { [unowned self] docs in
                 let data = DocumentTreeData(item: docs)
                 self.treeData.next(data)
             }
+            .disposeIn(NSObject().bnd_bag)
     }
 
     func treeView(frame frame: CGRect) -> RATreeView {
