@@ -48,17 +48,26 @@ class ConnectViewController: UIViewController {
 
                 let host = self.hostField.bnd_text.value!
                 let database = self.databaseField.bnd_text.value!
+
                 do {
-                    let client = try MongoClient(host: host, port: 27017, database: database)
-                    self.client = client
+                    self.client = try MongoClient(host: host, port: 27017, database: database)
 
                     self.performSegueWithIdentifier("listDatabases", sender: self)
+
                 } catch {
-                    print(error)
+                    let error = error as! MongoError
+
+                    let alert = UIAlertController(title: "Connection Failed", message: error.description, preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+
+                    alert.addAction(okAction)
+
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
             }
-
             .disposeIn(bnd_bag)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
