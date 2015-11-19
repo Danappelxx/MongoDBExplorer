@@ -1,6 +1,6 @@
 github "SwiftBond/Bond" "v4.2.0"
 github "Augustyniak/RATreeView" "2.0.1"
 github "SnapKit/SnapKit" "0.18.0"
-github "Danappelxx/libbson-xcode" "1.1.11"
+github "Danappelxx/libbson-xcode" "1.2.1"
 github "Danappelxx/libmongoc-xcode" "1.2.1"
-github "Danappelxx/SwiftMongoDB" "0.2.2"
+github "Danappelxx/SwiftMongoDB" "0.2.3"
