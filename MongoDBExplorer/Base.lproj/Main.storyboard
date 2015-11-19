@@ -172,7 +172,7 @@
             </objects>
             <point key="canvasLocation" x="1728" y="266"/>
         </scene>
-        <!--Document Tree View Controller-->
+        <!--Documents-->
         <scene sceneID="ikm-8B-xgm">
             <objects>
                 <viewController id="SES-QC-VXt" customClass="DocumentTreeViewController" customModule="MongoDBExplorer" customModuleProvider="target" sceneMemberID="viewController">
@@ -185,10 +185,82 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Documents" id="c2D-uB-QzH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="6E5-eD-Koh">
+                            <connections>
+                                <segue destination="JNG-E7-Ei2" kind="show" identifier="queryEdit" id="YTv-aH-0cK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2l-e8-ybM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2410" y="266"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="H9V-X3-rTb">
+            <objects>
+                <viewController id="JNG-E7-Ei2" customClass="QueryViewController" customModule="MongoDBExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kEZ-Hd-nyV"/>
+                        <viewControllerLayoutGuide type="bottom" id="qfO-Qq-dbz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X0h-3N-Fp7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsY-V6-am7">
+                                <rect key="frame" x="250" y="285" width="102" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKI-by-uTo">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nbo-lU-AYc">
+                                        <rect key="frame" x="45" y="0.0" width="57" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBv-2I-Tcp">
+                                <rect key="frame" x="279" y="323" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wsY-V6-am7" firstAttribute="centerY" secondItem="X0h-3N-Fp7" secondAttribute="centerY" placeholder="YES" id="J9a-Ru-gOi"/>
+                            <constraint firstItem="ZBv-2I-Tcp" firstAttribute="top" secondItem="wsY-V6-am7" secondAttribute="top" constant="38" placeholder="YES" id="JTn-ue-1xb"/>
+                            <constraint firstItem="wsY-V6-am7" firstAttribute="centerX" secondItem="X0h-3N-Fp7" secondAttribute="centerX" placeholder="YES" id="Ty8-mn-o0Y"/>
+                            <constraint firstItem="ZBv-2I-Tcp" firstAttribute="centerX" secondItem="X0h-3N-Fp7" secondAttribute="centerX" placeholder="YES" id="nY3-Fs-JHR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="kCp-ja-uMe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hQP-MA-Zuy">
+                            <connections>
+                                <action selector="cancelTapped:" destination="JNG-E7-Ei2" id="HYt-hm-3Tv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Gmm-Ip-BHS">
+                            <connections>
+                                <action selector="doneTapped:" destination="JNG-E7-Ei2" id="0Jv-5c-KH1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="keyField" destination="sKI-by-uTo" id="pXc-eQ-9es"/>
+                        <outlet property="keyValueFieldsStack" destination="wsY-V6-am7" id="dZa-jb-cTJ"/>
+                        <outlet property="keyValueLabel" destination="ZBv-2I-Tcp" id="BnX-bP-6UI"/>
+                        <outlet property="valueField" destination="Nbo-lU-AYc" id="2Nr-lK-6Ks"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o6s-Vh-t5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3085" y="266"/>
         </scene>
     </scenes>
 </document>

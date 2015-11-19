@@ -35,10 +35,10 @@ class DocumentTreeTableViewCell: UITableViewCell {
 
     var labelText: String {
         get {
-            return label.text ?? ""
+            return self.label!.text ?? ""
         }
         set {
-            label.text = newValue
+            self.label!.text = newValue
         }
     }
 
@@ -47,11 +47,11 @@ class DocumentTreeTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        self.label = UILabel(frame: self.bounds)
+        label = UILabel(frame: self.frame)
         self.addSubview(label)
 
-        label.snp_makeConstraints { make in
-            make.leftMargin.equalTo(10)
+        self.label.snp_makeConstraints { make in
+            make.leftMargin.equalTo(0)
             make.centerY.equalTo(self)
         }
     }

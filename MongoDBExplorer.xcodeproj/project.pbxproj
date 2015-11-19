@@ -30,6 +30,8 @@
 		378D78901BFBB64E0028C57D /* DocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D788F1BFBB64E0028C57D /* DocumentViewModel.swift */; };
 		378D78921BFBBDC40028C57D /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378D78911BFBBDC30028C57D /* Bond.framework */; };
 		378D78931BFBBDC40028C57D /* Bond.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 378D78911BFBBDC30028C57D /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		37B287651BFD4B8B005E7BDF /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B287641BFD4B8B005E7BDF /* QueryViewController.swift */; };
+		37B287671BFD615B005E7BDF /* QueryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B287661BFD615B005E7BDF /* QueryViewModel.swift */; };
 		37ED6BC41BFD29D000D2E36E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37ED6BC31BFD29D000D2E36E /* SnapKit.framework */; };
 		37ED6BC51BFD29D000D2E36E /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37ED6BC31BFD29D000D2E36E /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -74,6 +76,8 @@
 		371E66101BF9524C009A1040 /* DocumentTreeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTreeData.swift; sourceTree = "<group>"; };
 		378D788F1BFBB64E0028C57D /* DocumentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentViewModel.swift; sourceTree = "<group>"; };
 		378D78911BFBBDC30028C57D /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/iOS/Bond.framework; sourceTree = "<group>"; };
+		37B287641BFD4B8B005E7BDF /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
+		37B287661BFD615B005E7BDF /* QueryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewModel.swift; sourceTree = "<group>"; };
 		37ED6BC31BFD29D000D2E36E /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,8 +118,8 @@
 		371E65CB1BF9301E009A1040 /* MongoDBExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				378D788E1BFBB6210028C57D /* ViewModels */,
 				371E65FB1BF94237009A1040 /* Controllers */,
+				378D788E1BFBB6210028C57D /* ViewModels */,
 				371E66001BF94237009A1040 /* Views */,
 				371E660F1BF9524C009A1040 /* Models */,
 				371E65D01BF9301E009A1040 /* Main.storyboard */,
@@ -155,6 +159,7 @@
 				371E65FD1BF94237009A1040 /* DatabasesTableViewController.swift */,
 				371E65FC1BF94237009A1040 /* CollectionsTableViewController.swift */,
 				371E65FE1BF94237009A1040 /* DocumentTreeViewController.swift */,
+				37B287641BFD4B8B005E7BDF /* QueryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				378D788F1BFBB64E0028C57D /* DocumentViewModel.swift */,
+				37B287661BFD615B005E7BDF /* QueryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -264,7 +270,9 @@
 				371E66031BF94237009A1040 /* CollectionsTableViewController.swift in Sources */,
 				371E660B1BF9462A009A1040 /* DocumentTreeTableViewCell.swift in Sources */,
 				371E66051BF94237009A1040 /* DocumentTreeViewController.swift in Sources */,
+				37B287651BFD4B8B005E7BDF /* QueryViewController.swift in Sources */,
 				371E66111BF9524C009A1040 /* DocumentTreeData.swift in Sources */,
+				37B287671BFD615B005E7BDF /* QueryViewModel.swift in Sources */,
 				371E66041BF94237009A1040 /* DatabasesTableViewController.swift in Sources */,
 				371E66071BF94237009A1040 /* CollectionsTableViewCell.swift in Sources */,
 			);

@@ -12,18 +12,16 @@ import RATreeView
 import Bond
 
 class DocumentTreeViewController: UIViewController {
-
     var viewModel: DocumentViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let treeView = viewModel.treeView(frame: self.view.bounds)
+        let treeView = RATreeView(frame: self.view.bounds, style: RATreeViewStylePlain)
         treeView.registerClass(DocumentTreeTableViewCell.self, forCellReuseIdentifier: "documentTreeCell")
         treeView.dataSource = self
 
         view.addSubview(treeView)
-
 
         viewModel.treeData
             .observe { _ in
@@ -35,6 +33,16 @@ class DocumentTreeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "queryEdit" {
+            let destination = segue.destinationViewController as! QueryViewController
+            
+            let query = viewModel.query.value as! [String : String]
+            destination.viewModel = QueryViewModel(initialQuery: query)
+            destination.parent = self
+        }
     }
 }
 

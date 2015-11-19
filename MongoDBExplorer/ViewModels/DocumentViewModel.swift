@@ -28,31 +28,29 @@ class DocumentViewModel {
     func setupObservers() {
 
         query
-            .observe { [unowned self] query in
-                if let docs = try? self.collection.find(query) {
-                    self.documents.next(docs)
-                } else {
-                    self.documents.next([])
+            .map { query -> DocumentData in
+                if query.keys.count == 1 && query.keys.first == "" {
+                    return [:]
                 }
+                return query
             }
-            .disposeIn(NSObject().bnd_bag)
+            .map { query -> [MongoDocument] in
+                print(query)
+                guard let docs = try? self.collection.find(query) else {
+                    return []
+                }
+
+                return docs
+            }
+            .bindTo(documents)
 
         documents
             .map {
                 $0.map { $0.data }
             }
-            .observe { [unowned self] docs in
-                let data = DocumentTreeData(item: docs)
-                self.treeData.next(data)
+            .map { (data: [DocumentData]) -> DocumentTreeData in
+                DocumentTreeData(item: data)
             }
-            .disposeIn(NSObject().bnd_bag)
-    }
-
-    func treeView(frame frame: CGRect) -> RATreeView {
-        let treeView = RATreeView(frame: frame, style: RATreeViewStylePlain)
-
-        treeView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-
-        return treeView
+            .bindTo(treeData)
     }
 }
