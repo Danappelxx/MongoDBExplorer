@@ -13,6 +13,7 @@ class QueryViewController: UIViewController {
 
     var parent: DocumentTreeViewController!
 
+    @IBOutlet weak var limitField: UITextField!
     @IBOutlet weak var keyField: UITextField!
     @IBOutlet weak var valueField: UITextField!
 
@@ -48,19 +49,36 @@ class QueryViewController: UIViewController {
             make.width.equalTo(self.view)
         }
 
+
+        limitField.snp_makeConstraints { make in
+            make.centerX.equalTo(keyValueFieldsStack.snp_centerX)
+            make.centerY.equalTo(keyValueFieldsStack.snp_centerY).offset(-40)
+        }
+
     }
 
     func setupObservers() {
 
-        viewModel.keyString.bidirectionalBindTo(
-            keyField.bnd_text
-        )
-        viewModel.valueString.bidirectionalBindTo(
-            valueField.bnd_text
-        )
+        viewModel.keyString
+            .bidirectionalBindTo(keyField.bnd_text)
+        viewModel.valueString
+            .bidirectionalBindTo(valueField.bnd_text)
 
         viewModel.keyValueFormattedString
             .bindTo(keyValueLabel.bnd_text)
+
+        viewModel.limitString
+            .bidirectionalBindTo(limitField.bnd_text)
+
+        let originalColor = limitField.backgroundColor
+        viewModel.limitIsValid
+            .observe {
+                if !$0 {
+                    self.limitField.backgroundColor = UIColor.redColor()
+                } else {
+                    self.limitField.backgroundColor = originalColor
+                }
+            }
 
     }
 
@@ -71,10 +89,13 @@ class QueryViewController: UIViewController {
 
     @IBAction func doneTapped(sender: AnyObject) {
 
+        parent.viewModel.limit.next(self.viewModel.limit.value)
         parent.viewModel.query.next(self.viewModel.query.value)
         parent = nil // to prevent reference cycle
 
-        self.navigationController?.popViewControllerAnimated(true)
+        if viewModel.limitIsValid.value { // if invalid, don't perform segue
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     @IBAction func cancelTapped(sender: AnyObject) {
         parent = nil // to prevent reference cycle

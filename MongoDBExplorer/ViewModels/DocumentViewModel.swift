@@ -15,6 +15,7 @@ class DocumentViewModel {
 
     let documents = Observable([MongoDocument]())
     let query = Observable(DocumentData())
+    let limit = Observable(50)
     let treeData = Observable(DocumentTreeData(item: nil))
 
     let collection: MongoCollection
@@ -37,12 +38,14 @@ class DocumentViewModel {
             }
             .map { query -> [MongoDocument] in
                 print(query)
-                guard let docs = try? self.collection.find(query) else {
+                let limit = self.limit.value
+                guard let docs = try? self.collection.find(query, limit: limit) else {
                     return []
                 }
 
                 return docs
             }
+            .deliverOn(Queue.Main)
             .bindTo(documents)
 
         documents
@@ -53,6 +56,7 @@ class DocumentViewModel {
             .map { (data: [DocumentData]) -> DocumentTreeData in
                 DocumentTreeData(item: data)
             }
+            .deliverOn(Queue.Main)
             .bindTo(treeData)
     }
 }

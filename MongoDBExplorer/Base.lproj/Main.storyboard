@@ -227,16 +227,25 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBv-2I-Tcp">
                                 <rect key="frame" x="279" y="323" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Limit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXV-30-Y45">
+                                <rect key="frame" x="253" y="247" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vXV-30-Y45" firstAttribute="leading" secondItem="X0h-3N-Fp7" secondAttribute="leadingMargin" constant="233" placeholder="YES" id="0gK-Ji-koH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vXV-30-Y45" secondAttribute="trailing" constant="230" placeholder="YES" id="EGf-Gb-M0A"/>
+                            <constraint firstItem="qfO-Qq-dbz" firstAttribute="top" secondItem="vXV-30-Y45" secondAttribute="bottom" constant="323" placeholder="YES" id="GrZ-1u-Xx6"/>
                             <constraint firstItem="wsY-V6-am7" firstAttribute="centerY" secondItem="X0h-3N-Fp7" secondAttribute="centerY" placeholder="YES" id="J9a-Ru-gOi"/>
                             <constraint firstItem="ZBv-2I-Tcp" firstAttribute="top" secondItem="wsY-V6-am7" secondAttribute="top" constant="38" placeholder="YES" id="JTn-ue-1xb"/>
                             <constraint firstItem="wsY-V6-am7" firstAttribute="centerX" secondItem="X0h-3N-Fp7" secondAttribute="centerX" placeholder="YES" id="Ty8-mn-o0Y"/>
                             <constraint firstItem="ZBv-2I-Tcp" firstAttribute="centerX" secondItem="X0h-3N-Fp7" secondAttribute="centerX" placeholder="YES" id="nY3-Fs-JHR"/>
+                            <constraint firstItem="vXV-30-Y45" firstAttribute="top" secondItem="kEZ-Hd-nyV" secondAttribute="bottom" constant="183" placeholder="YES" id="tQI-Ka-xCb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="kCp-ja-uMe">
@@ -255,6 +264,7 @@
                         <outlet property="keyField" destination="sKI-by-uTo" id="pXc-eQ-9es"/>
                         <outlet property="keyValueFieldsStack" destination="wsY-V6-am7" id="dZa-jb-cTJ"/>
                         <outlet property="keyValueLabel" destination="ZBv-2I-Tcp" id="BnX-bP-6UI"/>
+                        <outlet property="limitField" destination="vXV-30-Y45" id="kx3-6T-5JF"/>
                         <outlet property="valueField" destination="Nbo-lU-AYc" id="2Nr-lK-6Ks"/>
                     </connections>
                 </viewController>

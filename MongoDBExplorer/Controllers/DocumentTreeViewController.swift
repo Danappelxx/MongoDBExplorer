@@ -40,7 +40,7 @@ class DocumentTreeViewController: UIViewController {
             let destination = segue.destinationViewController as! QueryViewController
             
             let query = viewModel.query.value as! [String : String]
-            destination.viewModel = QueryViewModel(initialQuery: query)
+            destination.viewModel = QueryViewModel(initialQuery: query, initialLimit: viewModel.limit.value)
             destination.parent = self
         }
     }
