@@ -28,6 +28,7 @@ class DocumentViewModel {
     func setupObservers() {
 
         query
+            .deliverOn(Queue.Background)
             .map { query -> DocumentData in
                 if query.keys.count == 1 && query.keys.first == "" {
                     return [:]
@@ -45,6 +46,7 @@ class DocumentViewModel {
             .bindTo(documents)
 
         documents
+            .deliverOn(Queue.Background)
             .map {
                 $0.map { $0.data }
             }
