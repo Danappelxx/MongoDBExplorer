@@ -11,11 +11,12 @@ import SnapKit
 
 class QueryViewController: UIViewController {
 
-    var parent: DocumentTreeViewController!
+    weak var delegate: QueryDelegate?
 
     @IBOutlet weak var limitField: UITextField!
     @IBOutlet weak var keyField: UITextField!
     @IBOutlet weak var valueField: UITextField!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
 
     @IBOutlet weak var keyValueFieldsStack: UIStackView!
 
@@ -79,6 +80,8 @@ class QueryViewController: UIViewController {
                     self.limitField.backgroundColor = originalColor
                 }
             }
+        viewModel.limitIsValid
+            .bindTo(doneButton.bnd_enabled)
 
     }
 
@@ -88,17 +91,16 @@ class QueryViewController: UIViewController {
     }
 
     @IBAction func doneTapped(sender: AnyObject) {
+        delegate?.update(limit: viewModel.limit.value, query: viewModel.query.value)
 
-        parent.viewModel.limit.next(self.viewModel.limit.value)
-        parent.viewModel.query.next(self.viewModel.query.value)
-        parent = nil // to prevent reference cycle
-
-        if viewModel.limitIsValid.value { // if invalid, don't perform segue
-            self.navigationController?.popViewControllerAnimated(true)
-        }
-    }
-    @IBAction func cancelTapped(sender: AnyObject) {
-        parent = nil // to prevent reference cycle
         self.navigationController?.popViewControllerAnimated(true)
     }
+    @IBAction func cancelTapped(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+}
+
+import SwiftMongoDB
+protocol QueryDelegate: class {
+    func update(limit limit: Int, query: DocumentData)
 }

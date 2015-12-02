@@ -261,6 +261,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="Gmm-Ip-BHS" id="VKS-kR-Dqb"/>
                         <outlet property="keyField" destination="sKI-by-uTo" id="pXc-eQ-9es"/>
                         <outlet property="keyValueFieldsStack" destination="wsY-V6-am7" id="dZa-jb-cTJ"/>
                         <outlet property="keyValueLabel" destination="ZBv-2I-Tcp" id="BnX-bP-6UI"/>

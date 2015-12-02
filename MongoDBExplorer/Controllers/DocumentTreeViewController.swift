@@ -41,8 +41,15 @@ class DocumentTreeViewController: UIViewController {
             
             let query = viewModel.query.value as! [String : String]
             destination.viewModel = QueryViewModel(initialQuery: query, initialLimit: viewModel.limit.value)
-            destination.parent = self
+            destination.delegate = self
         }
+    }
+}
+
+extension DocumentTreeViewController: QueryDelegate {
+    func update(limit limit: Int, query: DocumentData) {
+        viewModel.limit.next(limit)
+        viewModel.query.next(query)
     }
 }
 
